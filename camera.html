@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera</title>
+  <link rel="icon" href="Assets/meow-photobooth/icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="StyleSheets/camera.css" />
+
+  <style>
+    /* Filter Styles */
+    .filter-normal { filter: none; }
+    .filter-warm { filter: sepia(0.3) saturate(1.3); }
+    .filter-bw { filter: grayscale(1); }
+    .filter-vintage { filter: sepia(0.4) contrast(1.1) brightness(1.05); }
+    .filter-soft { filter: brightness(1.1) saturate(1.2); }
+
+    video, canvas {
+      transition: filter 0.3s ease;
+    }
+
+    .filter-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-controls button {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      width: auto; /* Overwrite default button width */
+      height: auto;
+    }
+    
+    #retakeBtn {
+      background-color: #ffeded;
+      border-color: #ff4d4d;
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <img src="Assets/meow-photobooth/icon.png" alt="Logo">
+  </div>
+
+  <div class="photobooth-container filter-normal" id="booth">
+    <div class="bubble-container"></div>
+    <div class="countdown-timer">3</div>
+    <canvas id="finalCanvas" width="1176" height="1470"></canvas>
+    <video id="liveVideo" autoplay playsinline muted class="filter-normal"></video>
+    <img class="frame-overlay" src="Assets/meow-photobooth/camerapage/frame.png" alt="frame overlay" />
+  </div>
+
+  <div class="filter-controls">
+    <button data-filter="filter-normal">Normal</button>
+    <button data-filter="filter-warm">Warm</button>
+    <button data-filter="filter-soft">Soft</button>
+    <button data-filter="filter-vintage">Vintage</button>
+    <button data-filter="filter-bw">B&W</button>
+  </div>
+
+  <div class="controls">
+    <button id="takePhoto">Capture</button>
+    <button id="retakeBtn" style="display:none;">Retake</button>
+    <button id="downloadBtn" style="display:none;">Download</button>
+  </div>
+  
+  <script src="Javascripts/camera.js"></script>
+  <script src="Javascripts/bubbles.js"></script>
+
+  <script>
+    // Logika Filter (Hanya untuk UI Preview)
+    const videoPreview = document.getElementById('liveVideo');
+    const filterBtns = document.querySelectorAll('.filter-controls button');
+    const filterClasses = ['filter-normal', 'filter-warm', 'filter-soft', 'filter-vintage', 'filter-bw'];
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterClass = btn.dataset.filter;
+        filterClasses.forEach(f => videoPreview.classList.remove(f));
+        videoPreview.classList.add(filterClass);
+      });
+    });
+  </script>
+</body>
+</html>
