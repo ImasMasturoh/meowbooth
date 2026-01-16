@@ -8,7 +8,8 @@
   --container-width: 500px;
   --container-aspect-ratio: 604 / 574;
 
-  --fish-rotation: 7.52deg;
+  /* Diubah dari --fish-rotation */
+  --ball-rotation: 7.52deg; 
   --strip-rotation: 16.52deg;
   --bubble-rotation: -16.52deg;
 }
@@ -97,9 +98,9 @@ body {
 .photobooth-mock,
 .photostrip-mock,
 .bubbles-mock,
-.fish-mock-1,
-.fish-mock-2,
-.fish-mock-3 {
+.ball-mock-1, /* Diubah */
+.ball-mock-2, /* Diubah */
+.ball-mock-3 { /* Diubah */
   position: absolute;
   background-size: cover;
   background-position: center;
@@ -119,8 +120,6 @@ body {
   opacity: 1;
 }
 
-
-
 /* bubbles */
 .bubbles-mock {
   z-index: 2;
@@ -132,7 +131,7 @@ body {
   transform: rotate(var(--bubble-rotation));
 }
 
-/* balls   */
+/* balls */
 .ball-mock-1 {
   z-index: 3;
   width: calc((72.65 / 604) * 100%);
