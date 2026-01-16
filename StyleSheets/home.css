@@ -132,35 +132,35 @@ body {
   transform: rotate(var(--bubble-rotation));
 }
 
-/* fishes */
-.fish-mock-1 {
+/* balls   */
+.ball-mock-1 {
   z-index: 3;
   width: calc((72.65 / 604) * 100%);
   height: calc(44.21 / 574 * 100%);
   left: calc(25 / 604 * 100%);
   top: calc(251.34 / 574 * 100%);
   background-image: url('../Assets/meow-photobooth/homepage/stiker3.png');
-  transform: rotate(calc(-1 * var(--fish-rotation)));
+  transform: rotate(calc(-1 * var(--ball-rotation)));
 }
 
-.fish-mock-2 {
+.ball-mock-2 {
   z-index: 3;
   width: calc((72.65 / 604) * 100%);
   height: calc(44.21 / 574 * 100%);
   left: calc(480.46 / 604 * 100%);
   top: calc(8.69 / 574 * 100%);
   background-image: url('../Assets/meow-photobooth/homepage/stiker3.png');
-  transform: rotate(var(--fish-rotation));
+  transform: rotate(var(--ball-rotation));
 }
 
-.fish-mock-3 {
+.ball-mock-3 {
   z-index: 3;
   width: calc((72.65 / 604) * 100%);
   height: calc(44.21 / 574 * 100%);
   right: calc(50 / 604 * 100%);
   bottom: calc(10 / 574 * 100%);
   background-image: url('../Assets/meow-photobooth/homepage/stiker3.png');
-  transform: rotate(calc(-1 * var(--fish-rotation)));
+  transform: rotate(calc(-1 * var(--ball-rotation)));
 }
 
 /* button styling */

@@ -97,16 +97,16 @@ canvas.addEventListener('touchend', pointerUp);
 canvas.addEventListener('touchcancel', pointerUp);
 
 // stickers
-addFishBtn.addEventListener('click', () => addSticker('Assets/meow-photobooth/camerapage/stickers/cat.png'));
-addOctopusBtn.addEventListener('click', () => addSticker('Assets/meow-photobooth/camerapage/stickers/ball2.png'));
+addCatBtn.addEventListener('click', () => addSticker('Assets/meow-photobooth/camerapage/stickers/cat.png'));
+addBall2Btn.addEventListener('click', () => addSticker('Assets/meow-photobooth/camerapage/stickers/ball2.png'));
 
-const seaweedImages = ['Assets/meow-photobooth/camerapage/stickers/pompom.png','Assets/meow-photobooth/camerapage/stickers/pompom.png'], 
-      bubbleImages = ['Assets/meow-photobooth/camerapage/stickers/laser.png','Assets/meow-photobooth/camerapage/stickers/laser.png'];
-let seaweedIndex = 0, bubbleIndex = 0;
+const pompomImages = ['Assets/meow-photobooth/camerapage/stickers/pompom.png','Assets/meow-photobooth/camerapage/stickers/pompom.png'], 
+      laserImages = ['Assets/meow-photobooth/camerapage/stickers/laser.png','Assets/meow-photobooth/camerapage/stickers/laser.png'];
+let pompomIndex = 0, laserIndex = 0;
 
-addSeaweedBtn.addEventListener('click', () => { addSticker(seaweedImages[seaweedIndex]); seaweedIndex = (seaweedIndex + 1) % seaweedImages.length; });
-addAxBtn.addEventListener('click', () => addSticker('Assets/meow-photobooth/camerapage/stickers/tikus.png'));
-addBubbleBtn.addEventListener('click', () => { addSticker(bubbleImages[bubbleIndex]); bubbleIndex = (bubbleIndex + 1) % bubbleImages.length; });
+addPompomBtn.addEventListener('click', () => { addSticker(pompomImages[pompomIndex]); pompomIndex = (pompomIndex + 1) % pompomImages.length; });
+addTikusBtn.addEventListener('click', () => addSticker('Assets/meow-photobooth/camerapage/stickers/tikus.png'));
+addLaserBtn.addEventListener('click', () => { addSticker(laserImages[laserIndex]); laserIndex = (laserIndex + 1) % laserImages.length; });
 
 // reset
 resetBtn.addEventListener('click', () => { stickers = []; drawCanvas(); });

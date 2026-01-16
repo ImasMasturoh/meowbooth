@@ -49,46 +49,42 @@ function stopBubbleAnimation() {
 }
 
 
-// fish animations
-const fishes = [
-  { el: document.querySelector('.fish-mock-1'), rotation: 7.52, dir: -1 },
-  { el: document.querySelector('.fish-mock-2'), rotation: 7.52, dir: 1 },
-  { el: document.querySelector('.fish-mock-3'), rotation: 7.52, dir: -1 },
+// ball animations
+const balls = [
+  { el: document.querySelector('.ball-mock-1'), rotation: 7.52, dir: -1 },
+  { el: document.querySelector('.ball-mock-2'), rotation: 7.52, dir: 1 },
+  { el: document.querySelector('.ball-mock-3'), rotation: 7.52, dir: -1 },
 ];
 
-let fishAnimating = false;
-let fishTimeouts = [];
+let ballAnimating = false;
+let ballTimeouts = [];
 
-function animateFish(index) {
-  if (!fishAnimating) return;
-  const fish = fishes[index];
-  if (!fish.el) return;
+function animateBall(index) {
+  if (!ballAnimating) return;
+  const ball = balls[index];
+  if (!ball.el) return;
 
-  fish.el.style.transform = `rotate(${fish.rotation * fish.dir}deg)`;
-  fish.dir *= -1;
+  ball.el.style.transform = `rotate(${ball.rotation * ball.dir}deg)`;
+  ball.dir *= -1;
 
-  fishTimeouts[index] = setTimeout(() => {
-    requestAnimationFrame(() => animateFish(index));
+  ballTimeouts[index] = setTimeout(() => {
+    requestAnimationFrame(() => animateBall(index));
   }, 200);
 }
 
-function startFishAnimation() {
-  if (fishAnimating) return;
-  fishAnimating = true;
-  fishes.forEach((_, i) => animateFish(i));
+function startBallAnimation() {
+  if (ballAnimating) return;
+  ballAnimating = true;
+  balls.forEach((_, i) => animateBall(i));
 }
 
-function stopFishAnimation() {
-  fishAnimating = false;
-  fishTimeouts.forEach(clearTimeout);
-  fishes.forEach(f => {
-    if (f.el) f.el.style.transform = 'rotate(0deg)';
+function stopBallAnimation() {
+  ballAnimating = false;
+  ballTimeouts.forEach(clearTimeout);
+  balls.forEach(b => {
+    if (b.el) b.el.style.transform = 'rotate(0deg)';
   });
 }
-
-
-
-
 
 
 // button interactions + adding safe navigation
@@ -114,16 +110,16 @@ if (selectButton) {
   ['mouseenter', 'mousedown'].forEach(evt =>
     selectButton.addEventListener(evt, () => {
       startBubbleAnimation();
-      startFishAnimation();
-      startPhotostripAnimation();
+      startBallAnimation(); // Sudah diubah
+      if (typeof startPhotostripAnimation === 'function') startPhotostripAnimation();
     })
   );
 
   ['mouseleave', 'mouseup'].forEach(evt =>
     selectButton.addEventListener(evt, () => {
       stopBubbleAnimation();
-      stopFishAnimation();
-      stopPhotostripAnimation();
+      stopBallAnimation(); // Sudah diubah
+      if (typeof stopPhotostripAnimation === 'function') stopPhotostripAnimation();
     })
   );
 }
