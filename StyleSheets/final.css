@@ -132,11 +132,11 @@ button:hover {
 }
 
 /* individual sticker urls */
-.fish-btn { background-image: url("../Assets/meow-photobooth/finalpage/cat.png"); }
-.octopus-btn { background-image: url("../Assets/meow-photobooth/finalpage/ball2.png"); }
-.seaweed-btn { background-image: url("../Assets/meow-photobooth/finalpage/pompom.png"); }
-.axolotl-btn { background-image: url("../Assets/meow-photobooth/finalpage/tikus.png"); }
-.bubble-btn { background-image: url("../Assets/meow-photobooth/finalpage/laser.png"); }
+.cat-btn { background-image: url("../Assets/meow-photobooth/finalpage/cat.png"); }
+.ball2-btn { background-image: url("../Assets/meow-photobooth/finalpage/ball2.png"); }
+.pompom-btn { background-image: url("../Assets/meow-photobooth/finalpage/pompom.png"); }
+.tikus-btn { background-image: url("../Assets/meow-photobooth/finalpage/tikus.png"); }
+.laser-btn { background-image: url("../Assets/meow-photobooth/finalpage/laser.png"); }
 .reset-btn { background-image: url("../Assets/meow-photobooth/finalpage/resetButton.png"); }
 
 /* heading content */
