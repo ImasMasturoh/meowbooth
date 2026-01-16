@@ -4,11 +4,11 @@ const WIDTH = 1176, HEIGHT = 1470;
 // dom elements
 const canvas = document.getElementById('finalCanvas'),
       ctx = canvas.getContext('2d'),
-      addFishBtn = document.getElementById('addFish'),
-      addOctopusBtn = document.getElementById('addOctopus'),
-      addSeaweedBtn = document.getElementById('addSeaweed'),
-      addAxBtn = document.getElementById('addAx'),
-      addBubbleBtn = document.getElementById('addBubble'),
+      addCatBtn = document.getElementById('addCat'),
+      addBall2Btn = document.getElementById('addBall2'),
+      addPompomBtn = document.getElementById('addPompom'),
+      addTikusBtn = document.getElementById('addTikus'),
+      addLaserBtn = document.getElementById('addLaser'),
       downloadBtn = document.getElementById('downloadBtn'),
       homeBtn = document.getElementById('homeBtn'),
       resetBtn = document.getElementById('reset');
